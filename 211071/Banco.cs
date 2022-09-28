@@ -28,7 +28,7 @@ namespace _211071
             try
             {
                 // Dá os parametros para a conexão ser feita: servidor, porta e senha, respectivamente
-                conexao = new MySqlConnection("server = localhost;port = 3307;pwd = etecjau");
+                conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau");
 
                 // Abre a conexão
                 conexao.Open();
