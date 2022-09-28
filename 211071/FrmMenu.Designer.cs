@@ -1,6 +1,6 @@
 ﻿namespace _211071
 {
-    partial class Form1
+    partial class FrmMenu
     {
         /// <summary>
         /// Variável de designer necessária.
