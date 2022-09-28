@@ -57,9 +57,10 @@ namespace _211071
                 // abre conexão
                 AbrirConexao();
 
-                // atribui à variavel o comando: criar banco "vendas" se ele já não existir; usar vendas;
-                // através da conexão: conexao;
-                comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS vendas; USE vendas;", conexao);
+                // atribui à variavel o comando de criar o banco de dados e a tabela cidades;
+                comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS vendas; USE vendas;" +
+                    "CREATE TABLE IF NOT EXISTS cidades(id integer auto_increment primary key, nome varchar(40)," +
+                    "uf char(02))", conexao);
 
                 // executa o comando no MySQL
                 comando.ExecuteNonQuery();
