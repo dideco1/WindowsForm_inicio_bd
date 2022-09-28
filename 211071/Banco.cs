@@ -23,7 +23,7 @@ namespace _211071
         // Variável responsável por ligar o banco em controles com a propriedade DataSource
         public static DataTable datatable;
 
-        public static void AbrirConexao() // Como diz o nome, abre a conexão com o banco
+        public static void AbrirConexao()
         {
             try
             {
@@ -44,6 +44,28 @@ namespace _211071
             {
                 // Fecha conexão com o banco
                 conexao.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public static void CriarBanco()
+        {
+            try
+            {
+                // abre conexão
+                AbrirConexao();
+
+                // atribui à variavel o comando
+                comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS vendas; USE vendas;", conexao);
+
+                // executa o comando no MySQL
+                comando.ExecuteNonQuery();
+
+                // fecha conexão
+                FecharConexao();
+
             }
             catch (Exception e)
             {
