@@ -22,5 +22,33 @@ namespace _211071
 
         // Variável responsável por ligar o banco em controles com a propriedade DataSource
         public static DataTable datatable;
+
+        public static void AbrirConexao() // Como diz o nome, abre a conexão com o banco
+        {
+            try
+            {
+                // Dá os parametros para a conexão ser feita: servidor, porta e senha, respectivamente
+                conexao = new MySqlConnection("server = localhost;port = 3307;pwd = etecjau");
+
+                // Abre a conexão
+                conexao.Open();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public static void FecharConexao()
+        {
+            try
+            {
+                // Fecha conexão com o banco
+                conexao.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
