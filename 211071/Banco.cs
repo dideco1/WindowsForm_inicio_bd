@@ -57,7 +57,8 @@ namespace _211071
                 // abre conexão
                 AbrirConexao();
 
-                // atribui à variavel o comando
+                // atribui à variavel o comando: criar banco "vendas" se ele já não existir; usar vendas;
+                // através da conexão: conexao;
                 comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS vendas; USE vendas;", conexao);
 
                 // executa o comando no MySQL
