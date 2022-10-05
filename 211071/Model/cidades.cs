@@ -44,6 +44,24 @@ namespace _211071.Model
                 Banco.comando.Parameters.AddWithValue("@nome", nome);
                 Banco.comando.Parameters.AddWithValue("@uf", uf);
                 Banco.comando.Parameters.AddWithValue("@id", id);
+                Banco.comando.ExecuteNonQuery();
+                Banco.FecharConexao();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void excluir()
+        {
+            try
+            {
+                Banco.AbrirConexao();
+                Banco.comando = new MySqlCommand("DELETE FROM cidades WHERE id = @id", Banco.conexao);
+                
+                Banco.comando.Parameters.AddWithValue("@id", id);
+                Banco.comando.ExecuteNonQuery();
+                Banco.FecharConexao();
             }
             catch (Exception e)
             {
