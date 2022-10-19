@@ -11,9 +11,9 @@ namespace _211071.Model
 {
     internal class cidades
     {
-        int id { get; set; }
-        string nome { get; set; }
-        int uf { get; set; }
+        public int id { get; set; }
+        public string nome { get; set; }
+        public string uf { get; set; }
 
         public void incluir()
         {

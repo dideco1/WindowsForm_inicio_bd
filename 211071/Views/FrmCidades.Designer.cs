@@ -42,7 +42,7 @@
             this.txt_pesquisa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgv_cidades = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_pesquisa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cidades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,6 +106,7 @@
             this.btn_incluir.TabIndex = 6;
             this.btn_incluir.Text = "Incluir";
             this.btn_incluir.UseVisualStyleBackColor = true;
+            this.btn_incluir.Click += new System.EventHandler(this.btn_incluir_Click);
             // 
             // btn_alterar
             // 
@@ -116,6 +117,7 @@
             this.btn_alterar.TabIndex = 7;
             this.btn_alterar.Text = "Alterar";
             this.btn_alterar.UseVisualStyleBackColor = true;
+            this.btn_alterar.Click += new System.EventHandler(this.btn_alterar_Click);
             // 
             // btn_cancelar
             // 
@@ -126,6 +128,7 @@
             this.btn_cancelar.TabIndex = 8;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_excluir
             // 
@@ -136,6 +139,7 @@
             this.btn_excluir.TabIndex = 9;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // btn_fechar
             // 
@@ -173,22 +177,23 @@
             this.dgv_cidades.Size = new System.Drawing.Size(460, 150);
             this.dgv_cidades.TabIndex = 13;
             // 
-            // button1
+            // btn_pesquisa
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button1.Location = new System.Drawing.Point(385, 224);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 58);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Pesquisar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_pesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btn_pesquisa.Location = new System.Drawing.Point(385, 224);
+            this.btn_pesquisa.Name = "btn_pesquisa";
+            this.btn_pesquisa.Size = new System.Drawing.Size(87, 58);
+            this.btn_pesquisa.TabIndex = 14;
+            this.btn_pesquisa.Text = "Pesquisar";
+            this.btn_pesquisa.UseVisualStyleBackColor = true;
+            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
             // FrmCidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.dgv_cidades);
             this.Controls.Add(this.txt_pesquisa);
             this.Controls.Add(this.label4);
@@ -228,6 +233,6 @@
         private System.Windows.Forms.TextBox txt_pesquisa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgv_cidades;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_pesquisa;
     }
 }
