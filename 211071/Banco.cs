@@ -32,7 +32,7 @@ namespace _211071
                 string usuario = "root";
                 string senha = "etecjau";
                 // Dá os parametros para a conexão ser feita: servidor, porta e senha, respectivamente
-                conexao = new MySqlConnection("server=" + server + ";port=" + porta + ";uid=" + usuario + ";pwd=" + senha );
+                conexao = new MySqlConnection("server=" + server + ";port=" + porta + ";uid=" + usuario + ";pwd=" + senha);
 
                 // Abre a conexão
                 conexao.Open();

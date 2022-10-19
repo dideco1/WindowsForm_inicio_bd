@@ -58,7 +58,7 @@ namespace _211071.Model
             {
                 Banco.AbrirConexao();
                 Banco.comando = new MySqlCommand("DELETE FROM cidades WHERE id = @id", Banco.conexao);
-                
+
                 Banco.comando.Parameters.AddWithValue("@id", id);
                 Banco.comando.ExecuteNonQuery();
                 Banco.FecharConexao();
@@ -66,6 +66,26 @@ namespace _211071.Model
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public DataTable consultar()
+        {
+            try
+            {
+                Banco.AbrirConexao();
+                Banco.comando = new MySqlCommand("SELECT * FROM cidades WHERE nome like @nome" + "ORDER BY nome", Banco.conexao);
+
+                Banco.comando.Parameters.AddWithValue("@nome", nome + "%");
+                Banco.adaptador = new MySqlDataAdapter(Banco.comando);
+                Banco.datatable = new DataTable();
+                Banco.adaptador.Fill(Banco.datatable);
+                Banco.FecharConexao();
+                return Banco.datatable;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
         }
     }
