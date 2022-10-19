@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace _211071.Model
 {
-    internal class cidades
+    public class cidades
     {
         public int id { get; set; }
         public string nome { get; set; }
