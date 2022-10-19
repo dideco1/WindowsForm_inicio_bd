@@ -79,7 +79,16 @@ namespace _211071.Views
 
         private void btn_alterar_Click(object sender, EventArgs e)
         {
+            if (txt_cidade.Text == string.Empty) return;
+            c = new cidades()
+            {
+                nome = txt_cidade.Text,
+                uf = txt_uf.Text
+            };
+            c.alterar();
 
+            limpaControles();
+            CarregarGrid("");
         }
 
         private void btn_pesquisa_Click(object sender, EventArgs e)
