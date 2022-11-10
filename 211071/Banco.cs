@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace _211071
 {
@@ -67,6 +68,12 @@ namespace _211071
                     "uf char(02))", conexao);
 
                 // executa o comando no MySQL
+                comando.ExecuteNonQuery();
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS marcas(id integer auto_increment primary key, marca char(20))", conexao);
+                comando.ExecuteNonQuery();
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS categorias(id integer auto_increment primary key, categoria char(20))", conexao);
                 comando.ExecuteNonQuery();
 
                 // fecha conexão
