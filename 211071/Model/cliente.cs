@@ -24,7 +24,7 @@ namespace _211071.Model
         {
             try
             {
-                Banco.conexao.Open();
+                Banco.conexao.Open();                
                 Banco.comando = new MySqlCommand("INSERT INTO clientes (nome, id_cidade, data_nasc, renda, cpf, foto, venda)" +
                     "VALUES (@nome, @id_cidade, @data_nasc, @renda, @cpf, @foto, @venda)", Banco.conexao);
                 Banco.comando.Parameters.AddWithValue("@nome", nome);
@@ -37,6 +37,7 @@ namespace _211071.Model
 
                 Banco.comando.ExecuteNonQuery();
                 Banco.conexao.Close();
+                
             }
             catch (Exception e)
             {

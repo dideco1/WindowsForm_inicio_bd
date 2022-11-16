@@ -27,5 +27,10 @@ namespace _211071
         {
             new FrmCidades().Show();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmClientes().Show();
+        }
     }
 }
