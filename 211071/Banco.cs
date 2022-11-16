@@ -76,6 +76,10 @@ namespace _211071
                 comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS categorias(id integer auto_increment primary key, categoria char(20))", conexao);
                 comando.ExecuteNonQuery();
 
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS clientes(id integer auto_increment primary key, nome char(40)," +
+                    "id_cidade integer, data_nasc date, renda decimal(10,2), cpf char(14), foto varchar(100), venda boolean)", conexao);
+                comando.ExecuteNonQuery();
+
                 // fecha conexão
                 FecharConexao();
 
