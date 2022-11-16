@@ -25,7 +25,7 @@ namespace _211071.Model
             try
             {
                 Banco.conexao.Open();                
-                Banco.comando = new MySqlCommand("INSERT INTO clientes (nome, id_cidade, data_nasc, renda, cpf, foto, venda)" +
+                Banco.comando = new MySqlCommand("USE vendas;INSERT INTO clientes (nome, id_cidade, data_nasc, renda, cpf, foto, venda)" +
                     "VALUES (@nome, @id_cidade, @data_nasc, @renda, @cpf, @foto, @venda)", Banco.conexao);
                 Banco.comando.Parameters.AddWithValue("@nome", nome);
                 Banco.comando.Parameters.AddWithValue("@id_cidade", id_cidade);
@@ -49,7 +49,7 @@ namespace _211071.Model
             try
             {
                 Banco.conexao.Open();
-                Banco.comando = new MySqlCommand("UPDATE clientes SET nome = @nome, id_cidade = @id_cidade, data_nasc = @data_nasc," +
+                Banco.comando = new MySqlCommand("USE vendas;UPDATE clientes SET nome = @nome, id_cidade = @id_cidade, data_nasc = @data_nasc," +
                     "renda = @renda, cpf = @cpf, foto = @foto, venda = @venda WHERE id = @id", Banco.conexao);
                 Banco.comando.Parameters.AddWithValue("@nome", nome);
                 Banco.comando.Parameters.AddWithValue("@id_cidade", id_cidade);
@@ -73,7 +73,7 @@ namespace _211071.Model
             try
             {
                 Banco.conexao.Open();
-                Banco.comando = new MySqlCommand("DELETE FROM clientes WHERE id = @id", Banco.conexao);
+                Banco.comando = new MySqlCommand("USE vendas;DELETE FROM clientes WHERE id = @id", Banco.conexao);
                 Banco.comando.Parameters.AddWithValue("@id", id);
 
                 Banco.comando.ExecuteNonQuery();
@@ -88,7 +88,7 @@ namespace _211071.Model
         {
             try
             {
-                Banco.comando = new MySqlCommand("SELECT cl.*, ci.nome cidade, ci.uf FROM clientes cl INNER JOIN cidades ci on" +
+                Banco.comando = new MySqlCommand("USE vendas; SELECT cl.*, ci.nome cidade, ci.uf FROM clientes cl INNER JOIN cidades ci on" +
                     "(ci.id = cl.id_cidade) WHERE cl.nome like @nome ORDER BY cl.nome", Banco.conexao);
                 Banco.comando.Parameters.AddWithValue("@nome", nome + "%");
                 Banco.adaptador = new MySqlDataAdapter(Banco.comando);
