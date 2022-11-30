@@ -90,6 +90,10 @@ namespace _211071
                 comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS VendaDet(id integer auto_increment primary key, idVendaCab int, idProduto int, qntd decimal(10, 3)," +
                     "valorUnitario decimal(10, 2))", conexao);
                 comando.ExecuteNonQuery();
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS caixa(id integer auto_increment primary key, idVendaCab int," +
+                    "dinheiro decimal(10, 2), pix decimal(10, 2), cartao decimal(10, 2), cheque decimal(10, 2), boleto decimal (10, 2))", conexao);
+                comando.ExecuteNonQuery();
                 // fecha conexão
                 FecharConexao();
 

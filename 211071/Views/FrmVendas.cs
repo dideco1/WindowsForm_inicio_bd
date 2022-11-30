@@ -178,6 +178,8 @@ namespace _211071.Views
                 };
                 atualizaEstoque(Convert.ToDouble(linha.Cells[2].Value));
             }
+            FrmCaixa form = new FrmCaixa(idVenda, (int)cbo_cliente.SelectedValue, total, cbo_cliente.Text);
+            form.ShowDialog();
             btn_cancelar.PerformClick();
         }
     }
