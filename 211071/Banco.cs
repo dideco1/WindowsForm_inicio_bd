@@ -80,6 +80,16 @@ namespace _211071
                     "id_cidade integer, data_nasc date, renda decimal(10,2), cpf char(14), foto varchar(100), venda boolean)", conexao);
                 comando.ExecuteNonQuery();
 
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS produtos(id integer auto_increment primary key, descricao char(40), idCategoria integer, " +
+                    "idMarca integer, estoque decimal(10, 3), valorVenda decimal(10, 2), foto varchar(100))", conexao);
+                comando.ExecuteNonQuery();
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS VendaCab(id integer auto_increment primary key, idCliente int, data date, total decimal(10,2))", conexao);
+                comando.ExecuteNonQuery();
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS VendaDet(id integer auto_increment primary key, idVendaCab int, idProduto int, qntd decimal(10, 3)," +
+                    "valorUnitario decimal(10, 2))", conexao);
+                comando.ExecuteNonQuery();
                 // fecha conexão
                 FecharConexao();
 

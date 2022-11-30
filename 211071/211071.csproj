@@ -116,6 +116,18 @@
     <Compile Include="Views\FrmClientes.Designer.cs">
       <DependentUpon>FrmClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmProdutos.Designer.cs">
+      <DependentUpon>FrmProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmVendas.Designer.cs">
+      <DependentUpon>FrmVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Marcas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmProdutos.resx">
+      <DependentUpon>FrmProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmVendas.resx">
+      <DependentUpon>FrmVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Marcas.resx">
       <DependentUpon>Marcas.cs</DependentUpon>
